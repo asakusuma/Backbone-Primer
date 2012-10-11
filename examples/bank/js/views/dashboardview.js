@@ -1,0 +1,3 @@
+var DashboardView = BaseView.extend({
+	
+});

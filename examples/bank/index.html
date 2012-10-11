@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+		<title>People App</title>
+
+		<!-- JS Libs -->
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+		<script type="text/javascript" src="js/lib/backbone-min.js"></script>
+
+		<script id="_person" type="text/template">
+			<div class="person">
+				<div class="control-group">
+				   	<label class="control-label"><%= name %></label>
+				   	<div class="controls">
+				    	<input type="text" placeholder="$0" data-name="<%= name %>" value="$<%= money %>">
+				    </div>
+				</div>
+			</div>
+		</script>
+
+		<script>
+
+			var data = [
+				{
+					name: "Ryan",
+					money: 10
+				},
+				{
+					name: "Jim",
+					money: 6
+				},
+				{
+					name: "Asa",
+					money: 4
+				},
+				{
+					name: "Kiro",
+					money: 0
+				}
+			];
+
+		</script>
+
+		<script type="text/javascript" src="js/app.js"></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+			  	<div class="span9">
+			    	<h1>Bank of LinkedIn</h2>
+		  		</div>
+			</div>
+
+			<div class="row">
+	      		<div class="span4" id="dashboard">
+	      			Total Money: <span id="total-money"></span>
+	      		</div>
+	      		<div class="span8" id="people">
+
+	      		</div>
+	    	</div>
+		</div>
+	</body>
+</html>

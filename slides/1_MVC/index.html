@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Presentation</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/slides.css">
+    <script src="../js/prettify.js"></script>
+    <script src="../js/lang-css.js"></script>
+    <script src="../js/slides.js"></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s what you want. */
+    
+    
+  </style>
+
+  <body>
+
+    <section class="slides layout-regular template-default">
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the slides below. -->
+
+      <article>
+        <h1>
+          Introduction to Frontend MVC
+        </h1>
+        <p>
+          Asa Kusuma
+          <br>
+          Ryan Blunden
+        </p>
+        
+        <aside class="notes">
+          <p>Introductory notes.</p>
+        </aside>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Backend MVC
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/backend.png">
+        </p>
+        <div class="source">
+          Source: blah blah
+        </div>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Key Attributes of Backend MVC
+        </h3>
+        <ul>
+          <li>
+            Only responds to one event: an HTTP request
+          </li>
+          <li>
+            Stateless
+          </li>
+          <li>
+            Any action starts at the controller
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Frontend MVC
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/frontend.png">
+        </p>
+        <div class="source">
+          Source: blah blah
+        </div>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Key Attributes of Frontend MVC
+        </h3>
+        <ul>
+          <li>
+            Responds to many different DOM events
+          </li>
+          <li>
+            Each layer has it's own state
+          </li>
+          <li>
+            Actions start in the view
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+       <article>
+        <h3>
+          Key Differences in Practice
+        </h3>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Backend MVC
+              </th>
+              <th>
+                Frontend MVC
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Stateless & Static
+              </td>
+              <td>
+                Contextually Interactive
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Actions
+              </td>
+              <td>
+                State + Actions
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Slimmer controllers
+              </td>
+              <td>
+                Heavier controllers
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Direct function calls
+              </td>
+              <td>
+                Event binding and callbacks
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &ldquo;Turn-based Strategy&rdquo;
+              </td>
+              <td>
+                &ldquo;Real-time Strategy&rdquo;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <footer></footer>
+      </article>
+
+      <!--
+      
+      <article>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath.
+        </p>
+        <aside class="notes">
+          <p>Blah blah blah. Don't forget to mention blah.</p>
+        </aside>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Simple slide with header and text
+        </h3>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath with a <code>code sample: 5px</code>.
+        </p>
+        <footer></footer>
+      </article>
+
+      <article class="smaller">
+        <h3>
+          Simple slide with header and text (small font)
+        </h3>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath with a <code>code sample: 5px</code>.
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with bullet points and a longer title, just because we
+          can make it longer
+        </h3>
+        <ul>
+          <li>
+            Use this template to create your presentation
+          </li>
+          <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with bullet points that builds
+        </h3>
+        <ul class="build">
+          <li>
+            <p>This is an example of a list</p>
+            <ul class="build">
+              <li>Nested build 1</li>
+              <li>Nested build 2</li>
+            </ul>
+          </li>
+          <li>
+            The list items fade in
+          </li>
+          <li>
+            Last one!
+          </li>
+        </ul>
+
+        <div class="build">
+          <p>Any element with child nodes can build.</p>
+          <p>It doesn't have to be a list.</p>
+        </div>
+        <footer></footer>
+      </article>
+
+      <article class="smaller">
+        <h3>
+          Slide with bullet points (small font)
+        </h3>
+        <ul>
+          <li>
+            Use this template to create your presentation
+          </li>
+          <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with a table
+        </h3>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Nickname
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Chris Saccheri
+              </td>
+              <td>
+                &ldquo;Papa Smurf&rdquo;
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Steve Ganz
+              </td>
+              <td>
+                &ldquo;The Chancellor&rdquo;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <footer></footer>
+      </article>
+      
+      <article class="smaller">
+        <h3>
+          Slide with a table (smaller text)
+        </h3>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Nickname
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Chris Saccheri
+              </td>
+              <td>
+                &ldquo;Papa Smurf&rdquo;
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Steve Ganz
+              </td>
+              <td>
+                &ldquo;The Chancellor&rdquo;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <footer></footer>
+      </article>
+      
+      <article>
+        <h3>
+          Styles
+        </h3>
+        <ul>
+          <li>
+            <span class="red">class="red"</span>
+          <li>
+            <span class="blue">class="blue"</span>
+          <li>
+            <span class="green">class="green"</span>
+          <li>
+            <span class="yellow">class="yellow"</span>
+          <li>
+            <span class="black">class="black"</span>
+          <li>
+            <span class="white">class="white"</span>
+          <li>
+            <b>bold</b> and <i>italic</i>
+        </ul>
+        <footer></footer>
+      </article>
+      
+      <article>
+        <h2>
+          Segue slide
+        </h2>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image
+        </h3>
+        <p>
+          <img style="height: 500px" src="images/example-graph.png">
+        </p>
+        <div class="source">
+          Source: Sergey Brin
+        </div>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image (centered)
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/example-graph.png">
+        </p>
+        <div class="source">
+          Source: Larry Page
+        </div>
+        <footer></footer>
+      </article>
+
+      <article class="fill">
+        <h3>
+          Image filling the slide (with optional header)
+        </h3>
+        <p>
+          <img src="images/example-cat.jpg">
+        </p>
+        <div class="source white">
+          Source: Reid Hoffman
+        </div>
+      </article>
+
+      <article>
+        <h3>
+          This slide has some code
+        </h3>
+        <section>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+      
+      <article class="smaller">
+        <h3>
+          This slide has some code (small font)
+        </h3>
+        <section>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+      
+      <article>
+        <q>
+          The best way to predict the future is to invent it.
+        </q>
+        <div class="author">
+          Alan Kay
+        </div>
+        <footer></footer>
+      </article>
+      
+      <article class="smaller">
+        <q>
+          A distributed system is one in which the failure of a computer 
+          you didn’t even know existed can render your own computer unusable.
+        </q>
+        <div class="author">
+          Leslie Lamport
+        </div>
+        <footer></footer>
+      </article>
+      
+      <article class="nobackground">
+        <h3>
+          A slide with an embed + title
+        </h3>
+        
+        <iframe src="http://www.linkedin.com/static?key=sizzler"></iframe>
+        <footer></footer>
+      </article>
+
+      <article class="nobackground">
+        <iframe src="http://www.linkedin.com/static?key=sizzler"></iframe>
+        <footer></footer>
+      </article>
+
+      <article class="fill">
+        <h3>
+          Full-slide embed with (optional) slide title on top
+        </h3>
+        <iframe src="http://www.linkedin.com/static?key=sizzler"></iframe>
+      </article>
+      
+      <article>
+        <h3>
+          Thank you!
+        </h3>
+        
+        <ul>
+          <li>
+            <a href="http://www.linkedin.com">linkedin.com</a>
+        </ul>
+        <footer></footer>
+      </article>
+
+    -->
+
+    </section>
+
+  </body>
+</html>

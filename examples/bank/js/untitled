@@ -1,0 +1,12 @@
+var App = Backbone.View.extend({
+ 	initialize: function() {
+ 		this.views.people = new PeopleView();
+ 		this.views.people.bind("moneyChanged",this.updatePerson);
+ 	},
+ 	updatePerson: function(event) {
+ 		this.collection.where({ name: event.name })[0].set('money',event.money);
+ 		this.collection.sort();
+ 		this.views.people.refreshData(this.collection.toJSON(), event.name);
+ 		this.views.dashboard.updateTotalMoney(this.getTotalMoney());
+ 	}
+});

@@ -1,0 +1,2 @@
+var PersonView = BaseView.extend({
+});

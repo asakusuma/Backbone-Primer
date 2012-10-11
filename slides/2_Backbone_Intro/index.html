@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Presentation</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/slides.css">
+    <script src="../js/prettify.js"></script>
+    <script src="../js/lang-css.js"></script>
+    <script src="../js/slides.js"></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s what you want. */
+    
+    
+  </style>
+
+  <body>
+
+    <section class="slides layout-regular template-default">
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the slides below. -->
+
+      <article>
+        <h1>
+          Introduction to Backbone.js
+        </h1>
+        <p>
+          Asa Kusuma
+          <br>
+          Ryan Blunden
+        </p>
+        
+        <aside class="notes">
+          <p>Introductory notes.</p>
+        </aside>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Backbone.js is boilerplate for a frontend MV* Framework
+        </h3>
+        <ul>
+          <li>
+            Models, Views, Collections, Routers
+          </li>
+          <li>
+            Pattern agnostic
+          </li>
+          <li>
+            Very flexible
+          </li>
+          <li>
+            Doesn't "do" anything special
+          <li>
+            Gives you the components to make organized apps
+          </li>
+          <li>
+            Flexible inheritance and classes
+          </li>
+          <li>
+            Pick and choose what components to use
+          </li>
+          <li>
+            Helps manage complex state
+          </li>
+          <li>
+            Lends itself to single-page apps
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article class="smaller">
+        <q>
+          Backbone.js let's you think about data objects, interface elements, and events, rather than JavaScript variables, DOM elements, and direct component delegation.
+        </q>
+        <footer></footer>
+      </article>
+
+      <article>
+        <q>
+          Backbone.js facilitates painless scaling.
+        </q>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>Key Scenarios</h3>
+        <ul>
+          <li>
+            One event triggers multiple actions in multiple components
+          </li>
+          <li>
+            Compounding events
+          </li>
+          <li>
+            Context-changing user input
+          </li>
+          <li>
+            Lots of unstructured code
+          </li>
+        </ul>
+
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Problem seems simple...
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/simple.jpeg">
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Until you scale
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/messy.jpeg">
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Enter Backbone.js
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/organized.jpeg">
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>How Backbone.js organizes code</h3>
+        <ul>
+          <li>
+            Objects emit events instead of direct delegation
+          </li>
+          <li>
+            Objects are designed to have a single purpose
+          </li>
+          <li>
+            Encapsulation
+          </li>
+          <li>
+            Inheritance
+          </li>
+          <li>
+            Components have their own place, space, and job
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          When to use Backbone.js
+        </h3>
+        <ul>
+          <li>
+            Complex state, actions, and input between page loads
+          </li>
+          <li>
+            To get organized
+          </li>
+        </ul>
+
+        <br><br>
+
+        <h3>
+          When NOT to use Backbone.js*
+        </h3>
+        <ul>
+          <li>
+            When LU can do the job
+          </li>
+          <li>
+            When controllers seem overkill
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Backbone.js can be overkill
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/pizza.jpeg">
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Some simpler solutions don't scale
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/tree.jpeg">
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h2>
+          Common Misconceptions
+        </h2>
+        <footer></footer>
+      </article>
+
+      <article>
+        <q>
+          If I use Backbone.js, my app with be organized, and my code will be beautiful.
+        </q>
+        <footer></footer>
+      </article>
+
+      <article>
+        <q>
+          Backbone.js doesn't give me controllers, so I don't need them.
+        </q>
+        <footer></footer>
+      </article>
+
+      <article>
+        <q>
+          Backbone.js is just for single-page apps.
+        </q>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h2>The Components</h2>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>The View</h3>
+        <ul>
+          <li>
+            Bound to a DOM element, usually a container
+          </li>
+          <li>
+            Responds to DOM events by triggering UI events for controller
+          </li>
+          <li>
+            Renders templates
+          </li>
+          <li>
+            Modifies DOM
+          </li>
+          <li>
+            Contains 99% of an app's jQuery selectors
+          </li>
+        </ul>
+
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>The Model</h3>
+        <ul>
+          <li>
+            Stores state of object
+          </li>
+          <li>
+            Basic logic
+          </li>
+          <li>
+            Basic validation
+          </li>
+          <li>
+            Can define contract for interacting with data
+          </li>
+        </ul>
+
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>The Collection</h3>
+        <ul>
+          <li>
+            An array with utility functions
+          </li>
+          <li>
+            Stores anything, usually models
+          </li>
+          <li>
+            Sort, filter, search, .etc
+          </li>
+        </ul>
+
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>The Router</h3>
+        <ul>
+          <li>
+            Map hash route ("me.com/#/person/vinay-dixit") to a function
+          </li>
+          <li>
+            Routers should do one thing: route
+          </li>
+          <li>
+            Not a controller
+          </li>
+        </ul>
+
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>The Controller</h3>
+        <ul>
+          <li>
+            Not an explicit Backbone.js component, but still necessary
+          </li>
+          <li>
+            Coordinates model and view layers
+          </li>
+          <li>
+            Has direct knowledge of models and views
+          </li>
+          <li>
+            Listens to events from models and views
+          </li>
+        </ul>
+
+        <footer></footer>
+      </article>
+
+      <article>
+        <h2>Backbone.js example: Bank App</h2>
+        <footer></footer>
+      </article>
+
+      <article>
+        
+        <p>
+          <img src="images/example.png">
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Create view, bind events
+        </h3>
+        <section>
+        <pre>
+var AppController = Backbone.View.extend({
+  initialize: function() {
+    this.views.people = new PeopleView({
+      //Attach view to DOM
+      el: $("#people"),
+      //Give some JSON data
+      data: this.collection.toJSON()
+    });
+    //Bind view event to controller
+    this.views.people.bind("moneyChanged",this.updatePerson);
+  },
+  //Controller response goes here
+  updatePerson: function(event) {
+    ...
+  }
+});
+
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Connect DOM events to view events
+        </h3>
+        <section>
+        <pre>
+var PeopleView = Backbone.View.extend({
+  //Map DOM event to view function
+  events: {
+    "change input":"moneyChanged"
+  },
+  moneyChanged: function(event) {
+    var amount = parseInt((event.currentTarget).val());
+
+    //Trigger event for controller
+    this.trigger("moneyChanged", {
+      name: $(event.currentTarget).attr("data-name"),
+      money: amount
+    });
+  }
+});
+
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Controller responds to events
+        </h3>
+        <section>
+        <pre>
+var AppController = Backbone.View.extend({
+  initialize: function() {
+    ...
+    this.views.people.bind("moneyChanged",this.updatePerson);
+  },
+  updatePerson: function(event) {
+    //Update model
+    this.collection.where({ 
+      name: event.name 
+    }).set('money',event.money);
+    //Sort data
+    this.collection.sort();
+    //Delegate proper response to views
+    this.views.people.refreshData(this.collection.toJSON(), event.name);
+    this.views.dashboard.updateTotalMoney(this.getTotalMoney());
+  }
+});
+
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Summary
+        </h3>
+        <ul>
+          <li>
+            Get organized
+          </li>
+          <li>
+            Get event-driven
+          </li>
+          <li>
+            Get scalable
+          </li>
+          <li>
+            Get readable
+          </li>
+        </ul>
+        <br><br>
+        go/backbone
+        <br><br>
+        Asa Kusuma - akusuma@linkedin.com<br>
+        <strong>Coming Soon:</strong> Frontend MV* Patterns
+        <footer></footer>
+      </article>
+
+<!--
+
+  &lt;script type="text/javascript"&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+-->
+
+<!--
+      
+      <article>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath.
+        </p>
+        <aside class="notes">
+          <p>Blah blah blah. Don't forget to mention blah.</p>
+        </aside>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Simple slide with header and text
+        </h3>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath with a <code>code sample: 5px</code>.
+        </p>
+        <footer></footer>
+      </article>
+
+      <article class="smaller">
+        <h3>
+          Simple slide with header and text (small font)
+        </h3>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath with a <code>code sample: 5px</code>.
+        </p>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with bullet points and a longer title, just because we
+          can make it longer
+        </h3>
+        <ul>
+          <li>
+            Use this template to create your presentation
+          </li>
+          <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with bullet points that builds
+        </h3>
+        <ul class="build">
+          <li>
+            <p>This is an example of a list</p>
+            <ul class="build">
+              <li>Nested build 1</li>
+              <li>Nested build 2</li>
+            </ul>
+          </li>
+          <li>
+            The list items fade in
+          </li>
+          <li>
+            Last one!
+          </li>
+        </ul>
+
+        <div class="build">
+          <p>Any element with child nodes can build.</p>
+          <p>It doesn't have to be a list.</p>
+        </div>
+        <footer></footer>
+      </article>
+
+      <article class="smaller">
+        <h3>
+          Slide with bullet points (small font)
+        </h3>
+        <ul>
+          <li>
+            Use this template to create your presentation
+          </li>
+          <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+          </li>
+        </ul>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with a table
+        </h3>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Nickname
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Chris Saccheri
+              </td>
+              <td>
+                &ldquo;Papa Smurf&rdquo;
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Steve Ganz
+              </td>
+              <td>
+                &ldquo;The Chancellor&rdquo;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <footer></footer>
+      </article>
+      
+      <article class="smaller">
+        <h3>
+          Slide with a table (smaller text)
+        </h3>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Nickname
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Chris Saccheri
+              </td>
+              <td>
+                &ldquo;Papa Smurf&rdquo;
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Steve Ganz
+              </td>
+              <td>
+                &ldquo;The Chancellor&rdquo;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <footer></footer>
+      </article>
+      
+      <article>
+        <h3>
+          Styles
+        </h3>
+        <ul>
+          <li>
+            <span class="red">class="red"</span>
+          <li>
+            <span class="blue">class="blue"</span>
+          <li>
+            <span class="green">class="green"</span>
+          <li>
+            <span class="yellow">class="yellow"</span>
+          <li>
+            <span class="black">class="black"</span>
+          <li>
+            <span class="white">class="white"</span>
+          <li>
+            <b>bold</b> and <i>italic</i>
+        </ul>
+        <footer></footer>
+      </article>
+      
+      <article>
+        <h2>
+          Segue slide
+        </h2>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image
+        </h3>
+        <p>
+          <img style="height: 500px" src="images/example-graph.png">
+        </p>
+        <div class="source">
+          Source: Sergey Brin
+        </div>
+        <footer></footer>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image (centered)
+        </h3>
+        <p>
+          <img class="centered" style="height: 500px" src="images/example-graph.png">
+        </p>
+        <div class="source">
+          Source: Larry Page
+        </div>
+        <footer></footer>
+      </article>
+
+      <article class="fill">
+        <h3>
+          Image filling the slide (with optional header)
+        </h3>
+        <p>
+          <img src="images/example-cat.jpg">
+        </p>
+        <div class="source white">
+          Source: Reid Hoffman
+        </div>
+      </article>
+
+      <article>
+        <h3>
+          This slide has some code
+        </h3>
+        <section>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+      
+      <article class="smaller">
+        <h3>
+          This slide has some code (small font)
+        </h3>
+        <section>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+        <footer></footer>
+      </article>
+      
+      <article>
+        <q>
+          The best way to predict the future is to invent it.
+        </q>
+        <div class="author">
+          Alan Kay
+        </div>
+        <footer></footer>
+      </article>
+      
+      <article class="smaller">
+        <q>
+          A distributed system is one in which the failure of a computer 
+          you didn’t even know existed can render your own computer unusable.
+        </q>
+        <div class="author">
+          Leslie Lamport
+        </div>
+        <footer></footer>
+      </article>
+      
+      <article class="nobackground">
+        <h3>
+          A slide with an embed + title
+        </h3>
+        
+        <iframe src="http://www.linkedin.com/static?key=sizzler"></iframe>
+        <footer></footer>
+      </article>
+
+      <article class="nobackground">
+        <iframe src="http://www.linkedin.com/static?key=sizzler"></iframe>
+        <footer></footer>
+      </article>
+
+      <article class="fill">
+        <h3>
+          Full-slide embed with (optional) slide title on top
+        </h3>
+        <iframe src="http://www.linkedin.com/static?key=sizzler"></iframe>
+      </article>
+      
+      <article>
+        <h3>
+          Thank you!
+        </h3>
+        
+        <ul>
+          <li>
+            <a href="http://www.linkedin.com">linkedin.com</a>
+        </ul>
+        <footer></footer>
+      </article>
+
+-->    
+
+    </section>
+
+  </body>
+</html>
